@@ -73,7 +73,7 @@ router.post("/login", async (req: Request, res: Response) => {
     };
 
     const token = jwt.sign(payload, secret, {});
-    res.cookie("token", token, { httpOnly: true }).json(payload);
+    res.cookie("token", token, { httpOnly: true, secure: true, sameSite: 'none' }).json(payload);
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
   }

@@ -70,6 +70,9 @@ export default function Sidebar() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/profile`, {
           method: 'GET',
           credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
 
         if (response.ok) {
@@ -95,6 +98,9 @@ export default function Sidebar() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/is-logged-in`, {
           method: 'GET',
           credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
 
         if (response.ok) {
@@ -121,6 +127,9 @@ export default function Sidebar() {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/logout`, {
         method: 'GET',
         credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
 
       if (response.ok) {
@@ -144,6 +153,9 @@ export default function Sidebar() {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/task/all`, {
           method: 'GET',
           credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
 
         if (!response.ok) {
