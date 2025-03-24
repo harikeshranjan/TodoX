@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TodoX
 
-## Getting Started
+TodoX is a modern task management web application built using Next.js 15, ShadCN, and Tailwind CSS. It provides a seamless experience for managing tasks efficiently with a user-friendly interface.
 
-First, run the development server:
+## 🚀 Features
+
+- **Modern UI**: Beautiful and responsive design with a focus on usability.
+- **Dark Mode**: Toggle between light and dark mode with a single click.
+- **Task Management**: Create, update, and delete tasks with ease.
+- **Filter Tasks**: Filter tasks based on their status (completed, pending, or all).
+- **Bilingual**: Supports both English and Turkish languages.
+- **SEO Friendly**: Optimized for search engines to improve visibility.
+- **Authentication**: Secure authentication.
+
+## 🛠 Tech Stack
+
+- **Frontend**: Next.js 15, ShadCN, Tailwind CSS
+- **Backend**: Express.js, MongoDB
+- **Authentication**: JWT (JSON Web Tokens), BcryptJs
+
+## 📦 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/todox.git
+cd todox
+```
+
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env.local` file in the root directory and add the following environment variables:
+
+```env
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+CLIENT_URL=http://localhost:3000
+```
+
+```env
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+4. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🖥️ Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
+- Create, edit, and organize your tasks with ease!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🤝 Contributing
 
-## Learn More
+Contributions, issues, and feature requests are welcome!
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Fork the repository
+# Create a new branch
+git checkout -b feature/awesome-feature
+# Make your changes
+# Commit your changes
+git commit -am 'Add some awesome feature'
+# Push to the branch
+git push origin feature/awesome-feature
+# Submit a pull request
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📜 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Deploy on Vercel
+## 📞 Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Email: [ranjansinhaharikesh@gmail.com](mailto:ranjansinhaharikesh@gmail.com)
+- Portfolio: [harikeshranjansinha.vercel.app](https://harikeshranjansinha.vercel.app)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌟 Show Your Support
+
+Give a ⭐️ if you found this project useful!
+
+---
+
+Made with ❤️ using Next.js 15, ShadCN & Tailwind CSS
