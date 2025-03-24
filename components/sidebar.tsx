@@ -46,7 +46,7 @@ export default function Sidebar() {
     if (status === 'unauthenticated') {
       router.push('/login');
     }
-  }, [isDesktop, setIsSidebarOpen, pathname, status]);
+  }, [isDesktop, setIsSidebarOpen, pathname, status, router]);
 
 
   useEffect(() => {
