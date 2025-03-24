@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
 // API routes to update the task completion status
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest) {
   try {
     await connectToDatabase();
 
@@ -14,10 +14,16 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { id } = await params;
-    const { completed } = await request.json();
+    // Extract ID from request URL
+    const url = new URL(request.url);
+    const id = url.pathname.split("/").pop(); // Extracts ID from URL
 
-    if (!id || typeof completed !== "boolean") {
+    if (!id) {
+      return NextResponse.json({ error: "Task ID is required" }, { status: 400 });
+    }
+
+    const { completed } = await request.json();
+    if (typeof completed !== "boolean") {
       return NextResponse.json({ error: "Enter all the fields" }, { status: 400 });
     }
 
@@ -39,22 +45,23 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 }
 
 // API routes to delete a task
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest) {
   try {
     await connectToDatabase();
 
     const session = await getServerSession(authOptions);
-    
     if (!session || !session.user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { id } = await params;
+    const url = new URL(request.url);
+    const id = url.pathname.split("/").pop(); // Extract the ID from URL
+
     if (!id) {
-      return NextResponse.json({ error: "Enter the valid task id" }, { status: 400 });
+      return NextResponse.json({ error: "Invalid task ID" }, { status: 400 });
     }
 
-    const deletedTask = await Task.findByIdAndDelete({ _id: id, userId: session.user.id });
+    const deletedTask = await Task.findOneAndDelete({ _id: id, userId: session.user.id });
 
     if (!deletedTask) {
       return NextResponse.json({ error: "Task not found" }, { status: 404 });
