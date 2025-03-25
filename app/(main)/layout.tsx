@@ -18,10 +18,8 @@ export default function HomeLayout({
         disableTransitionOnChange
       >
         <SidebarProvider>
-          {/* <TaskProvider> */}
           <Navbar />
           {children}
-          {/* </TaskProvider> */}
           <Sidebar />
         </SidebarProvider>
       </ThemeProvider>
